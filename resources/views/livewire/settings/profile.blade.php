@@ -18,11 +18,7 @@ new class extends Component {
     public function mount(): void
     {
         $user = $this->fetchUserProfile();
-
-        //dd($user);
-        //$this->name = Auth::user()->name;
-        //$this->email = Auth::user()->email;
-
+        
         $this->name = $user['name'];
         $this->email = $user['email'];
     }
