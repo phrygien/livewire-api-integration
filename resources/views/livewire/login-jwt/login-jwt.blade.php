@@ -94,9 +94,10 @@ new #[Layout('components.layouts.auth')] class extends Component {
     <x-auth-session-status class="text-center" :status="session('status')" />
 
     @if ($errorMessage)
-    <div class="bg-red-100 text-red-700 p-2 mb-4 rounded">
+    <flux:callout variant="danger" icon="x-circle" heading="{{ $errorMessage }}" />
+    {{-- <div class="bg-red-100 text-red-700 p-2 mb-4 rounded">
         {{ $errorMessage }}
-    </div>
+    </div> --}}
 @endif
 
     <form wire:submit="login" class="flex flex-col gap-6">
